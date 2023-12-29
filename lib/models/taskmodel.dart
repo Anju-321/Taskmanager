@@ -1,11 +1,3 @@
-// class Task {
-//   final String id;
-//   final String title;
-
-//   Task({required this.id, required this.title});
-
-//   static void fromJson(Map<String, dynamic> taskData) {}
-// }
 class Task {
   final String id;
   final String title;

@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
                 ),
                
                 onDismissed: (direction) {
-                  taskProvider.flutterTts.speak("task completed");                  
+                  taskProvider.flutterTts.speak("${task.title} Completed ");                  
                     taskProvider.deleteTask(task.id);
                   
                 },
@@ -47,13 +47,13 @@ class HomePage extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue, // Customize text color
+                        color: Colors.blue, 
                       ),
                     ),
-                    tileColor: Colors.grey[400], // Customize tile background color
-                    contentPadding: const EdgeInsets.all(10.0), // Adjust content padding
+                    tileColor: Colors.grey[400], 
+                    contentPadding: const EdgeInsets.all(10.0), 
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0), // Add rounded corners
+                      borderRadius: BorderRadius.circular(10.0), 
                     ),
                   ),
                 ), 
@@ -73,40 +73,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-//   void _showAddTaskDialog(BuildContext context) {
-//     TextEditingController titleController = TextEditingController();
-//     debugPrint(titleController.toString());
-
-//     showDialog(
-//       context: context,
-//       builder: (BuildContext context) {
-//         return AlertDialog(
-//           title: const Text('Add Task'),
-//           content: TextField(
-//             controller: titleController,
-//             decoration: const InputDecoration(labelText: 'Task Title'),
-//           ),
-//           actions: <Widget>[
-//             TextButton(
-//               onPressed: () {
-//                 Navigator.of(context).pop();
-//               },
-//               child: const Text('Cancel'),
-//             ),
-//             TextButton(
-//               onPressed: () {
-//                 if (titleController.text.isNotEmpty) {
-//                   Provider.of<TaskProvider>(context, listen: false)
-//                       .addTask(titleController.text);
-//                   Navigator.of(context).pop();
-//                 }
-//               },
-//               child: const Text('Add'),
-//             ),
-//           ],
-//         );
-//       },
-//     );
-//   }
 }
